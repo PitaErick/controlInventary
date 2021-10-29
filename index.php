@@ -1,0 +1,9 @@
+<?php
+header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
+header('Content-Type: text/plain');
+//echo MD5(uniqid(fread($myfile,filesize("include/config.foo")), true));
+//$headers = apache_request_headers();
+$myfile = fopen("include/config.foo", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("include/config.foo"));
+fclose($myfile);
+?>
